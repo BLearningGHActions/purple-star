@@ -1,0 +1,30 @@
+name: Conditions
+run-name: Executing Conditions
+
+on:
+  workflow_dispatch:
+
+jobs:    
+  build:
+    if: ${{ true }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Experimenting
+        if: ${{ true }}
+        run: |
+          echo $GREETING
+          echo $ADDITION
+          echo $EVENT
+        env:
+          GREETING: ${{ 'hello'}} world
+          ADDITION: ${{ 1==2 }}
+          EVENT: ${{ github.event_name }}
+  
+  deploy:
+    if: ${{ github.triggering_actor == 'link-ghost' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run if previous job succeeds
+        run: |
+          echo "Everything is working as expected"background"
+  
