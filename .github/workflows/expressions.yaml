@@ -1,0 +1,18 @@
+name: Expressions and literals
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Experimenting
+        run: |
+          echo $GREETING
+          echo $ADDITION
+          echo $EVENT
+        env:
+          GREETING: ${{ 'hello' }} world
+          ADDITION: ${{ 1==2}}
+          EVENT: ${{ github.event_name}}
