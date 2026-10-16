@@ -1,0 +1,19 @@
+name: Functions
+run-name: Executing Functions
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Experimenting
+        run: |
+          echo: $CONTAINS
+          echo: $FORMAT
+          echo: "$TO_JSON"
+        env:
+          CONTAINS: ${{ contains('GitHub Actions', 'actions') }}
+          FORMAT: ${{ format('This {0} {1}', 'is', 'cool') }}
+          TO_JSON: ${{ toJson(github.event) }}
