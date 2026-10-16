@@ -8,8 +8,8 @@ jobs:
     steps:
       - name: Experimenting
         run: |
-          echo: $CONTAINS
-          echo: $FORMAT
+          echo $CONTAINS
+          echo $FORMAT
           printf "$TO_JSON"
         env:
           CONTAINS: ${{ contains('GitHub Actions', 'actions') }}
