@@ -12,7 +12,7 @@ jobs:
         run: |
           echo: $CONTAINS
           echo: $FORMAT
-          echo: "$TO_JSON"
+          printf "$TO_JSON"
         env:
           CONTAINS: ${{ contains('GitHub Actions', 'actions') }}
           FORMAT: ${{ format('This {0} {1}', 'is', 'cool') }}
