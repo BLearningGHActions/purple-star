@@ -26,5 +26,5 @@ jobs:
     steps:
       - name: Run if previous job succeeds
         run: |
-          echo "Everything is working as expected"background"
+          echo "Everything is working as expected"
   
