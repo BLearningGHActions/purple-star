@@ -1,6 +1,5 @@
 name: "Lesson 2 - Exercise 4"
-run-name: Experimenting stopgap
-
+run-name: Experimenting Concurrency
 on: 
   push:
     branches:
