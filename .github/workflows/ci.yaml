@@ -1,12 +1,13 @@
 name: "Lesson 2 - Exercise 1"
 run-name: Run with filters
 on: 
-  push:
-    branches:
-      - main
-    paths-ignore: 
-      -  "**.md"
-      - "**/**.md"
+  #push:
+    #branches:
+      #- main
+    #paths-ignore: 
+      #-  "**.md"
+      #- "**/**.md"
+  workflow_dispatch:     
 
 jobs:
   test:
