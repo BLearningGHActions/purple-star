@@ -1,0 +1,25 @@
+name: Workflow commands
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Run the website checks
+        run: |
+          logfile = $(./scripts/check_website.sh)
+
+          # if logfile is not empty
+          if [ -s "$logfile" ]; then
+            echo "## Website Checks Summary" >> $GITHUB_STEP_SUMMARY
+            echo "Reading results from: $logfile" >> $GITHUB_STEP_SUMMARY
+            cat $logfile >> $GITHUB_STEP_SUMMARY
+          else
+            # Set a job error message
+            echo "::error file=./scripts/check_website.sh, title=Errro::Unknown error occurred"
+          fi
